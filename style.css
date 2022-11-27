@@ -1,0 +1,102 @@
+body
+{
+    background-color: #222;
+    color: #dbdbdb;
+    user-select: none;
+}
+
+.sticks
+{
+    border-top: #dbdbdb 2px solid;
+    border-right: #dbdbdb 2px solid;
+    border-left: #dbdbdb 2px solid;
+    width: 25px;
+    height: 400px;
+    float: left;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stick1
+{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#stick2
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#stick3
+{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.rings
+{
+    border: 1px solid #8400ff;
+    background-color: #490497;
+    margin: 2px;
+    height: 35px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+#ring0
+{
+    width: 80px;
+}
+
+#ring1
+{
+    width: 100px;
+}
+
+#ring2
+{
+    width: 120px;
+}
+
+#ring3
+{
+    width: 140px;
+}
+
+#ring4
+{
+    width: 160px;
+}
+
+#ring5
+{
+    width: 180px;
+}
+
+#ring6
+{
+    width: 200px;
+}
+
+#ring7
+{
+    width: 220px;
+}
+
