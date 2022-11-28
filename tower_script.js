@@ -15,8 +15,8 @@ function drop(ev)
     const stick1 = document.querySelector('#stick1')
     let drag_id, elem_id
     var data = ev.dataTransfer.getData("Text")
-    ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
-    ev.preventDefault()
+    //ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+    //ev.preventDefault()
     
     /*if(ev.target.children.length < 1)
     {
@@ -37,11 +37,23 @@ function drop(ev)
         let par = ev.target.children[1]
         let id_del = fc.getAttribute('id')
         let elem = document.getElementById(id_del)
-        if(fc.getAttribute('id')[4] > par.getAttribute('id')[4])
+        console.log(par.getAttribute('id')[4])
+        if(fc.getAttribute('id')[4] < par.getAttribute('id')[4])
         {
-            elem.remove()
+            ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+            ev.preventDefault()
         }
             
+    }
+    else if(ev.target.children.length == 0)
+    {
+        ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+        ev.preventDefault()
+    }
+    else if(ev.target.children.length == 1)
+    {
+        ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+        ev.preventDefault()
     }
 
     //ring_check()
