@@ -60,6 +60,16 @@ body
     border-bottom-right-radius: 50px;
 }
 
+.rings:hover
+{
+    cursor: not-allowed;
+}
+
+.draggable
+{
+    cursor: grab !important;
+}
+
 #ring0
 {
     width: 80px;
@@ -99,4 +109,3 @@ body
 {
     width: 220px;
 }
-
