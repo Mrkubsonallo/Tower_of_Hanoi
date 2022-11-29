@@ -8,6 +8,7 @@ function allowDrop(ev)
 function drag(ev) 
 {
     ev.dataTransfer.setData("Text", ev.target.id)
+    //console.log(ev.dataTransfer.setData("Text", ev.target.id))
 }
   
 function drop(ev) 
@@ -15,21 +16,7 @@ function drop(ev)
     const stick1 = document.querySelector('#stick1')
     let drag_id, elem_id
     var data = ev.dataTransfer.getData("Text")
-    //ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
-    //ev.preventDefault()
-    
-    /*if(ev.target.children.length < 1)
-    {
-        ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
-        ev.preventDefault()
-    }
-    else if(data[4] < ev.target.firstChild.getAttribute('id'))
-    {
-        ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
-        ev.preventDefault()
-    }
-    else
-        ev.preventDefault()*/
+    console.log(data[4])
 
     if(ev.target.children.length > 1)
     {
@@ -52,6 +39,7 @@ function drop(ev)
     }
     else if(ev.target.children.length == 1)
     {
+        if(data[4] < ev.target.children[0].getAttribute('id')[4])
         ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
         ev.preventDefault()
     }
@@ -110,15 +98,6 @@ function reset_game()
         else
             stick1.innerHTML += '<div id="ring'+i+'" class="rings" ondragstart="drag(event)"></div>'
 }
-
-/*function small_ring_check(element)
-{
-    const stick1 = document.querySelector('#stick1')
-    const stick2 = document.querySelector('#stick2')
-    const stick3 = document.querySelector('#stick3')
-
-    console.log(element)
-}*/
 
 function draggable_attrib()
 {
