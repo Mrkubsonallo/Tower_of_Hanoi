@@ -7,7 +7,7 @@ function allowDrop(ev)
   
 function drag(ev) 
 {
-    ev.dataTransfer.setData("Text", ev.target.id)
+    ev.dataTransfer.setData("Text", ev.target.id)   
 }
   
 function drop(ev) 
@@ -15,26 +15,88 @@ function drop(ev)
     const stick1 = document.querySelector('#stick1')
     let drag_id, elem_id
     var data = ev.dataTransfer.getData("Text")
+    if(ev.target.getAttribute('id') == "stick2")
+        console.log(ev.target.getAttribute('id'))
 
-    if(ev.target.children.length > 1)
+    if(ev.target.getAttribute('id') == "stick1" )
     {
-        if(data[4] < ev.target.children[0].getAttribute('id')[4])
+        if(ev.target.children.length > 1)
+        {
+            if(data[4] < ev.target.children[0].getAttribute('id')[4])
+            {
+                ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+                ev.preventDefault()
+                
+            }  
+        }
+        else if(ev.target.children.length == 0)
         {
             ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
             ev.preventDefault()
         }
+        else if(ev.target.children.length == 1)
+        {
+            if(data[4] < ev.target.children[0].getAttribute('id')[4])
+            {
+                ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+                ev.preventDefault()
+            }
             
+        }
     }
-    else if(ev.target.children.length == 0)
+
+    if(ev.target.getAttribute('id') == "stick2" )
     {
-        ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
-        ev.preventDefault()
+        if(ev.target.children.length > 1)
+        {
+            if(data[4] < ev.target.children[0].getAttribute('id')[4])
+            {
+                ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+                ev.preventDefault()
+                
+            }  
+        }
+        else if(ev.target.children.length == 0)
+        {
+            ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+            ev.preventDefault()
+        }
+        else if(ev.target.children.length == 1)
+        {
+            if(data[4] < ev.target.children[0].getAttribute('id')[4])
+            {
+                ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+                ev.preventDefault()
+            }
+            
+        }
     }
-    else if(ev.target.children.length == 1)
+
+    if(ev.target.getAttribute('id') == "stick3" )
     {
-        if(data[4] < ev.target.children[0].getAttribute('id')[4])
-        ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
-        ev.preventDefault()
+        if(ev.target.children.length > 1)
+        {
+            if(data[4] < ev.target.children[0].getAttribute('id')[4])
+            {
+                ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+                ev.preventDefault()
+                
+            }  
+        }
+        else if(ev.target.children.length == 0)
+        {
+            ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+            ev.preventDefault()
+        }
+        else if(ev.target.children.length == 1)
+        {
+            if(data[4] < ev.target.children[0].getAttribute('id')[4])
+            {
+                ev.target.insertBefore(document.getElementById(data), ev.target.firstChild)
+                ev.preventDefault()
+            }
+            
+        }
     }
 
     end_game()
