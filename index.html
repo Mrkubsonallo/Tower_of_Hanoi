@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE html><html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Tower of Hanoi</title>
@@ -7,11 +6,8 @@
     <script src="tower_script.js" defer></script>
 </head>
 <body>
-        <div id="stick1" class="sticks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-        <div id="stick2" class="sticks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
-        <div id="stick3" class="sticks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    
+    <button onclick="start()" id="btn_start">Rozpocznij grę</button>
+    <span id="span1">Czas na ułożenie wieży</span><input type="range" id="time_range">
+    <span id="span2">Ilość krążków do ułożenia</span><input type="range" id="max_leng_range" min="3" max="10">
 </body>
 </html>
