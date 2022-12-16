@@ -50,7 +50,7 @@ body
 
 .rings
 {
-    border: 1px solid #8400ff;
+    /*border: 1px solid #8400ff;
     background-color: #490497;
     margin: 2px;
     height: 35px;
@@ -58,6 +58,10 @@ body
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    border-bottom: 50px solid #069e12;*/
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	height: 0;
 }
 
 .rings:hover

@@ -5,10 +5,7 @@ function menu()
     const stick1 = document.querySelector('#stick1')
     const stick2 = document.querySelector('#stick2')
     const stick3 = document.querySelector('#stick3')
-    let new_btn = document.getElementById('button')
 
-    new_btn.removeAttribute("onclick")
-    new_btn.remove()
     stick1.remove()
     stick2.remove()
     stick3.remove()
@@ -41,6 +38,13 @@ function menu()
     document.body.appendChild(span2)
     document.body.appendChild(max_leng_range)
 
+    
+}
+
+function btn_start_rem()
+{
+    let new_btn = document.getElementById('button')
+    new_btn.remove()
 }
 
 function start()
@@ -219,9 +223,10 @@ function reset_game()
     for(i=0; i<=max_length-1; i++)
         if(i == 0)
             stick1.innerHTML += '<div id="ring'+i+'" class="rings draggable" draggable="true" ondragstart="drag(event)"></div>'
-            
         else
             stick1.innerHTML += '<div id="ring'+i+'" class="rings" ondragstart="drag(event)"></div>'
+
+    get_style()
 }
 
 function draggable_attrib()
@@ -262,4 +267,31 @@ function draggable_attrib()
         stick3.firstChild.classList.add('draggable')
     }
     
+}
+
+function get_style()
+{
+    let elements = document.getElementsByClassName('rings')
+    for(i=0; i<elements.length; i++)
+    {
+        if(i%2==0)
+            elements[i].style.borderBottom = "50px solid #00be10"
+        else
+            elements[i].style.borderBottom = "50px solid #069e12"
+    }
+
+    let ring0 = document.getElementById('ring0')
+    ring0.style.width = 0
+    ring0.style.borderBottom = "70px solid #00be10"
+    ring0.style.borderLeft = "45px solid transparent"
+    ring0.style.borderRight = "45px solid transparent"
+
+    let ring_num = elements.length-1
+    let ring_id = 'ring'+ring_num
+    let last_ring = document.getElementById(ring_id)
+    last_ring.style.border = "1px solid #ad7204"
+    last_ring.style.width = '40px'
+    last_ring.style.height = "35px"
+    last_ring.style.backgroundColor = "#ad7204"
+
 }
