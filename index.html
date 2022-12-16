@@ -3,11 +3,41 @@
     <meta charset="UTF-8">
     <title>Tower of Hanoi</title>
     <link rel="stylesheet" href="style.css">
-    <script src="tower_script.js" defer></script>
+    <script>
+        let i=0
+        function script_set(elem)
+        {
+            if(i==0)
+            {
+                let script_elem = document.createElement('script')
+                script_elem.src = elem.value
+                script_elem.defer = true
+                script_elem.id = "script"
+                document.head.appendChild(script_elem)
+                i++
+            }
+            else
+            {
+                let scr = document.getElementById('script')
+                scr.remove()
+                i = 0
+                let script_elem = document.createElement('script')
+                script_elem.src = elem.value
+                script_elem.defer = true
+                script_elem.id = "script"
+                document.head.appendChild(script_elem)
+                i++
+            }
+            
+        }
+    </script>
 </head>
 <body>
-    <button onclick="start()" id="btn_start">Rozpocznij grę</button>
+    
     <span id="span1">Czas na ułożenie wieży</span><input type="range" id="time_range">
     <span id="span2">Ilość krążków do ułożenia</span><input type="range" id="max_leng_range" min="3" max="8">
+    Clasic<input type="radio" name="radios" onclick="script_set(this)" value="tower_script_clasic.js">
+    Christmas<input type="radio" name="radios" onclick="script_set(this)" value="tower_script_christmas.js">
+    <button onclick="start()" id="btn_start">Rozpocznij grę</button>
 </body>
 </html>
