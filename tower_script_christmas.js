@@ -1,46 +1,5 @@
 let max_length
 
-function menu() 
-{
-    const stick1 = document.querySelector('#stick1')
-    const stick2 = document.querySelector('#stick2')
-    const stick3 = document.querySelector('#stick3')
-
-    stick1.remove()
-    stick2.remove()
-    stick3.remove()
-
-
-    let btn_start = document.createElement('button')
-    btn_start.setAttribute('onclick', 'start()')
-    btn_start.setAttribute('id', 'btn_start')
-    btn_start.textContent = "Rozpocznij grę"
-
-    let time_range = document.createElement('input') 
-    time_range.setAttribute('type', 'range')
-    time_range.setAttribute('id', 'time_range')
-
-    let max_leng_range = document.createElement('input')
-    max_leng_range.setAttribute('type', 'range')
-    max_leng_range.setAttribute('id', 'max_leng_range')
-
-    let span1 = document.createElement('span')
-    span1.setAttribute('id', 'span1')
-    span1.textContent = "Czas na ułożenie wieży"
-
-    let span2 = document.createElement('span')
-    span2.setAttribute('id', 'span2')
-    span2.textContent = "Ilość krążków do ułożenia"
-
-    document.body.appendChild(btn_start)
-    document.body.appendChild(span1)
-    document.body.appendChild(time_range)
-    document.body.appendChild(span2)
-    document.body.appendChild(max_leng_range)
-
-    
-}
-
 function btn_start_rem()
 {
     let new_btn = document.getElementById('button')
@@ -54,6 +13,10 @@ function start()
     let max_leng_range = document.getElementById('max_leng_range')
     let span1 = document.getElementById('span1')
     let span2 = document.getElementById('span2')
+    let span3 = document.getElementById('span3')
+    let span4 = document.getElementById('span4')
+    let radio1 = document.getElementById('radio1')
+    let radio2 = document.getElementById('radio2')
     
     max_length = max_leng_range.value
 
@@ -62,6 +25,10 @@ function start()
     max_leng_range.remove()
     span1.remove()
     span2.remove()
+    span3.remove()
+    span4.remove()
+    radio1.remove()
+    radio2.remove()
 
     let stc1 = document.createElement('div')
     stc1.setAttribute('id', 'stick1')
@@ -197,7 +164,7 @@ function end_game()
 {
     if(stick3.children.length == max_length)
     {
-        alert("Gratulacje wygrałeś")
+        alert("Gratulacje ołożyłeś/łaś Wieżę Hanoi")
         new_game()
     }  
 }
@@ -205,8 +172,8 @@ function end_game()
 function new_game()
 {
     let new_btn = document.createElement('button')
-    new_btn.textContent = "Nowa gra"
-    new_btn.setAttribute('onclick', 'menu()')
+    new_btn.textContent = "Powrót do menu"
+    new_btn.setAttribute('onclick', 'document.location.reload(true)')
     document.body.appendChild(new_btn)
 }
 
@@ -278,6 +245,13 @@ function get_style()
             elements[i].style.borderBottom = "50px solid #00be10"
         else
             elements[i].style.borderBottom = "50px solid #069e12"
+    }
+
+    for(i=1; i<elements.length-1; i++)
+    {
+        elements[i].style.borderLeft = "25px solid transparent"
+        elements[i].style.borderRight = "25px solid transparent"
+        elements[i].style.height = 0
     }
 
     let ring0 = document.getElementById('ring0')
